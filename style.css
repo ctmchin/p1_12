@@ -4,7 +4,7 @@
     --secondary-color: #98C1D9; /* 淺藍 */
     --accent-color: #E0FBFC; /* 點綴白藍 */
     --text-color: #293241;
-    --bg-color: #f0f2f5;
+    --bg-color: #f8f9fa;
     --correct-color: #28a745;
     --incorrect-color: #dc3545;
 }
@@ -38,7 +38,7 @@ footer {
 
 /* --- 主體內容 --- */
 main {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem;
     max-width: 1000px;
     margin: 2rem auto;
     background-color: white;
@@ -123,6 +123,7 @@ article#content-container p, article#content-container ul {
 
 article#content-container ul {
     padding-left: 25px;
+    list-style-type: disc;
 }
 
 article#content-container li {
@@ -134,18 +135,52 @@ article#content-container li {
     text-align: center;
 }
 
+#quiz-selection-screen {
+    margin: 2rem 0;
+}
+
+#quiz-selection-screen label {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+#quiz-selection-screen select {
+    padding: 8px 12px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+#start-quiz-btn {
+    display: block;
+    margin: 1.5rem auto 0;
+    padding: 12px 35px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--correct-color);
+    color: white;
+    cursor: pointer;
+}
+
+#quiz-game-screen {
+    display: none; /* 預設隱藏 */
+}
+
 #quiz-question {
     font-size: 1.4rem;
     font-weight: 500;
     margin-bottom: 2rem;
     min-height: 80px;
+    text-align: left;
 }
 
 #quiz-options {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 #quiz-options button {
@@ -165,25 +200,37 @@ article#content-container li {
     background-color: var(--accent-color);
 }
 
-#quiz-options button.correct {
-    background-color: var(--correct-color);
-    border-color: var(--correct-color);
-    color: white;
-    font-weight: bold;
+#quiz-options button.correct, #quiz-options button.selected.correct {
+    background-color: var(--accent-color);
+    border: 2px solid var(--correct-color);
+    color: #155724;
 }
 
-#quiz-options button.incorrect {
-    background-color: var(--incorrect-color);
-    border-color: var(--incorrect-color);
-    color: white;
-    font-weight: bold;
+#quiz-options button.selected.incorrect {
+    background-color: #f8d7da;
+    border: 2px solid var(--incorrect-color);
+    color: #721c24;
 }
 
 #quiz-feedback {
     font-size: 1.2rem;
     font-weight: bold;
     min-height: 30px;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
+    text-align: left;
+    border-radius: 8px;
+    padding: 1rem;
+    display: none; /* 預設隱藏 */
+}
+
+#quiz-feedback.correct-feedback {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+#quiz-feedback.incorrect-feedback {
+    background-color: #f8d7da;
+    color: #721c24;
 }
 
 #quiz-results {
