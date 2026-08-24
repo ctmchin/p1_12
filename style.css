@@ -2,27 +2,28 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
     margin: 0;
-    background-color: #f4f6f8; /* A neutral light grey background */
-    color: #333;
+    background-color: #e9ebee; /* Original light grey background */
+    color: #1c1d21;
 }
 
-/* --- Header and Search Bar --- */
+/* --- Header and Search Bar (Matched to Image) --- */
 .header {
-    background-color: #4A6A8A; /* Original dark slate blue from image */
+    background-color: #5d7a98; /* Original Header Color */
     color: white;
-    padding: 20px;
+    padding: 25px 20px;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 2.2em;
     font-weight: 600;
 }
 
 .search-container {
     padding: 20px;
-    background-color: #4A6A8A;
+    background-color: #5d7a98;
     display: flex;
     justify-content: center;
 }
@@ -30,25 +31,24 @@ body {
 .search-wrapper {
     display: flex;
     width: 100%;
-    max-width: 600px;
+    max-width: 500px; /* Adjusted to match image proportion */
     border-radius: 50px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #search-input {
     flex-grow: 1;
     border: none;
-    padding: 15px 25px;
+    padding: 12px 20px;
     font-size: 1em;
     outline: none;
 }
 
 #search-button {
     border: none;
-    background-color: #a7c0d7; /* Lighter blue from original search button */
-    color: white;
-    padding: 0 30px;
+    background-color: #a7b9cc; /* Original Button Color */
+    color: #44596e;
+    padding: 0 25px;
     font-size: 1em;
     cursor: pointer;
     font-weight: 500;
@@ -56,13 +56,13 @@ body {
 }
 
 #search-button:hover {
-    background-color: #8faac4;
+    background-color: #96a9bd;
 }
 
-/* --- Main Layout and Menu Containers --- */
+/* --- Main Layout and Menu --- */
 main {
     padding: 20px;
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -70,86 +70,85 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
     padding: 10px 0;
 }
 
 #sub-menu-container {
+    margin-top: 25px;
+    padding-top: 25px;
     border-top: 1px solid #e0e0e0;
-    margin-top: 20px;
-    padding-top: 20px;
 }
 
-/* --- Button Styles --- */
+/* --- Button Styles (Matched to Image) --- */
 .menu-container button {
-    background-color: white;
-    color: #4A6A8A;
-    border: 1px solid #d0d7de;
-    padding: 10px 20px;
-    border-radius: 50px; /* Pill-shaped buttons */
-    font-size: 0.9em;
-    font-weight: 500;
+    background-color: #f0f2f5;
+    color: #5d7a98;
+    border: 1px solid #dce1e6;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.95em;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition: all 0.2s;
 }
 
 .menu-container button.active {
-    background-color: #4A6A8A; /* Active state matches header */
+    background-color: #5d7a98;
     color: white;
-    border-color: #4A6A8A;
+    border-color: #5d7a98;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* --- Content and Search Results --- */
+/* --- Main Content Area --- */
 #content-container {
-    margin-top: 20px;
+    margin-top: 25px;
     background-color: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    line-height: 1.8;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    line-height: 1.7;
 }
 
 #content-container h2 {
     color: #4A6A8A;
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
     margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.6em;
 }
 
-#search-results-list {
-    list-style-type: none;
-    padding: 0;
+#content-container h3 {
+    color: #333;
+    font-size: 1.3em;
+    margin-top: 25px;
 }
 
-#search-results-list li {
-    padding: 15px;
-    border-bottom: 1px solid #eee;
-    cursor: pointer;
-    transition: background-color 0.2s;
+#content-container p {
+    margin-bottom: 15px;
 }
 
-#search-results-list li:hover {
-    background-color: #f9f9f9;
+/* --- Flashcard & Quiz Specific Styles --- */
+.card-grid, .quiz-container, .flashcard-container {
+    animation: fadeIn 0.5s;
 }
 
-.result-title {
-    font-weight: bold;
-    color: #4A6A8A;
-    margin-bottom: 5px;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- NEWLY ADDED & SCOPED FLASHCARD STYLES --- */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
 }
 
 .flashcard {
     background-color: transparent;
     width: 100%;
-    height: 180px;
+    height: 160px;
     perspective: 1000px;
     cursor: pointer;
 }
@@ -170,23 +169,13 @@ main {
 }
 
 .flashcard-front, .flashcard-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    border-radius: 10px;
-    box-sizing: border-box;
+    position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    padding: 20px; border-radius: 10px; box-sizing: border-box;
 }
 
 .flashcard-front {
     background-color: #fff;
-    color: black;
     border: 1px solid #eee;
 }
 
@@ -195,27 +184,112 @@ main {
     transform: rotateY(180deg);
 }
 
-.question-text {
-    font-size: 1.2em;
+.question-text { font-size: 1.1em; }
+.answer-text { font-size: 1.4em; font-weight: bold; }
+.card-number { position: absolute; top: 10px; left: 10px; font-size: 0.8em; color: #aaa; }
+
+.flashcard-container h2 {
+    font-size: 1.8rem; margin-bottom: 0.5rem; padding-bottom: 0.8rem;
+    border-bottom-width: 3px; border-bottom-style: solid;
 }
 
-.answer-text {
-    font-size: 1.5em;
+/* --- Quiz Styles --- */
+.quiz-container, .quiz-game, .quiz-results {
+    text-align: center;
+}
+
+.quiz-selection input[type="number"] {
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 80px;
+    margin-right: 10px;
+}
+
+.quiz-selection button, .quiz-results button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #5d7a98;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.quiz-results button {
+    margin: 10px;
+}
+
+.quiz-selection button:hover {
+    background-color: #4a6a8a;
+}
+
+.quiz-progress {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.quiz-question {
+    font-size: 1.4em;
+    margin: 20px 0;
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.quiz-option {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+    background-color: #f0f2f5;
+    border: 1px solid #dce1e6;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.quiz-option:hover:not(:disabled) {
+    background-color: #e4e6e9;
+    border-color: #ccc;
+}
+
+.quiz-option.correct {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.quiz-option.incorrect {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+.quiz-feedback {
+    margin-top: 20px;
+    font-size: 1.2em;
     font-weight: bold;
 }
 
-.card-number {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 0.8em;
-    color: #aaa;
+.correct-text { color: #155724; }
+.incorrect-text { color: #721c24; }
+
+.final-score {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #5d7a98;
+    margin: 10px 0;
 }
 
-.flashcard-container h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-    padding-bottom: 0.8rem;
-    border-bottom-width: 3px;
-    border-bottom-style: solid;
+.final-percentage {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
 }
