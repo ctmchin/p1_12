@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
         }
     };
-    const quizPools = { /* Omitted for brevity, content is unchanged */ };
+    const quizPools = { /* Omitted for brevity, as it's unchanged */ };
     
     // --- DOM Elements ---
     const mainMenuContainer = document.getElementById('main-menu-container');
@@ -192,21 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let activeMainButton = null;
     let activeSubButton = null;
-    let currentQuizPart = null;
-    let currentQuizPool = null;
-    let currentQuiz = null;
-    let currentQuestionIndex = 0;
-    let score = 0;
 
-    // --- Utility Functions ---
-    function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-        return array;
-    }
-    
     // --- Menu and Content Functions ---
     function handleMainClick(event) {
         const mainId = event.target.dataset.mainId;
@@ -215,46 +201,51 @@ document.addEventListener('DOMContentLoaded', function() {
         activeMainButton.classList.add('active');
         generateSubMenu(mainId);
         subMenuContainer.style.display = 'flex';
-        const firstSubId = Object.keys(database[mainId].sections)[0];
-        displayContent(mainId, firstSubId, true);
+        // Automatically click the first submenu item
+        const firstSubButton = subMenuContainer.querySelector('button');
+        if (firstSubButton) {
+            firstSubButton.click();
+        }
     }
     
     function generateSubMenu(mainId) {
         subMenuContainer.innerHTML = '';
         const article = database[mainId];
-        for (const subId in article.sections) {
+        Object.keys(article.sections).forEach(subId => {
             const button = document.createElement('button');
             button.textContent = article.sections[subId].title;
             button.dataset.mainId = mainId;
             button.dataset.subId = subId;
             button.addEventListener('click', handleSubClick);
             subMenuContainer.appendChild(button);
-        }
+        });
     }
 
     function handleSubClick(event) {
         const mainId = event.target.dataset.mainId;
         const subId = event.target.dataset.subId;
-        displayContent(mainId, subId, true);
+        
+        if (activeSubButton) activeSubButton.classList.remove('active');
+        activeSubButton = event.target;
+        activeSubButton.classList.add('active');
+        
+        displayContent(mainId, subId);
     }
 
-    function displayContent(mainId, subId, updateActiveButton = false) {
-        if (updateActiveButton) {
-            if (activeSubButton) activeSubButton.classList.remove('active');
-            activeSubButton = subMenuContainer.querySelector(`[data-sub-id='${subId}']`);
-            if (activeSubButton) activeSubButton.classList.add('active');
-        }
+    function displayContent(mainId, subId) {
         const section = database[mainId].sections[subId];
-        if (section.type === 'quiz') {
-            displayQuizPartSelection();
-        } else if (section.type === 'flashcard') {
+        // Check for special section types
+        if (section.type === 'flashcard') {
             displayFlashcards(mainId);
+        } else if (section.type === 'quiz') {
+            // Placeholder for quiz functionality
+            contentContainer.innerHTML = `<h2>${section.title}</h2><p>互動挑戰題功能即將推出，敬請期待！</p>`;
         } else {
             contentContainer.innerHTML = section.content;
         }
     }
 
-    // --- Flashcard Functions (NEW) ---
+    // --- Flashcard Functions ---
     function displayFlashcards(mainId) {
         const articleFlashcards = flashcardData[mainId];
         if (!articleFlashcards) {
@@ -266,7 +257,6 @@ document.addEventListener('DOMContentLoaded', function() {
         let cardHTML = '';
 
         cards.forEach((card, index) => {
-            // Use inline style to set the unique color for the back of the card
             cardHTML += `
                 <div class="flashcard">
                     <div class="flashcard-inner">
@@ -285,7 +275,7 @@ document.addEventListener('DOMContentLoaded', function() {
         contentContainer.innerHTML = `
             <div class="flashcard-container">
                 <h2 style="color: ${themeColor}; border-bottom-color: ${themeColor};">${title}</h2>
-                <p>點擊卡片即可翻轉查看答案。</p>
+                <p style="text-align: center; color: #666;">點擊卡片即可翻轉查看答案。</p>
                 <div class="card-grid">${cardHTML}</div>
             </div>
         `;
@@ -311,14 +301,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 const contentText = tempDiv.textContent || tempDiv.innerText || "";
                 if (contentText.toLowerCase().includes(query)) {
                     const index = contentText.toLowerCase().indexOf(query);
-                    const start = Math.max(0, index - 30);
-                    const end = Math.min(contentText.length, index + query.length + 30);
-                    let snippet = contentText.substring(start, end);
-                    const regex = new RegExp(query, 'gi');
+                    const start = Math.max(0, index - 50);
+                    const end = Math.min(contentText.length, index + query.length + 50);
+                    let snippet = contentText.substring(start, end).trim();
+                    const regex = new RegExp(query.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'gi');
                     snippet = snippet.replace(regex, (match) => `<strong>${match}</strong>`);
                     results.push({
                         mainId, subId,
-                        title: `${database[mainId].title} - ${section.title}`,
+                        title: `${database[mainId].title} » ${section.title}`,
                         snippet: `...${snippet}...`
                     });
                 }
@@ -331,6 +321,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (activeMainButton) activeMainButton.classList.remove('active');
         if (activeSubButton) activeSubButton.classList.remove('active');
         subMenuContainer.style.display = 'none';
+        
         let html = `<h2>搜尋 "${query}" 的結果</h2>`;
         if (results.length === 0) {
             html += '<p>找不到相關內容，請嘗試其他關鍵字。</p>';
@@ -361,51 +352,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Quiz Functions (unchanged) ---
-    function displayQuizPartSelection() {
-        // This function's content remains the same...
-        contentContainer.innerHTML = `
-            <div class="quiz-container">
-                <h2>互動答題挑戰</h2>
-                <div id="quiz-part-selection">
-                    <button data-part="part1">基礎篇：字詞辨識</button>
-                    <button data-part="part2">進階篇：多項選擇</button>
-                    <button data-part="part3">挑戰篇：長問答</button>
-                </div>
-                <div id="quiz-selection-screen">
-                     <h3 id="quiz-part-title"></h3>
-                     <div id="quiz-part-content"></div>
-                </div>
-                 <div id="quiz-game-screen">
-                    <div id="quiz-question"></div>
-                    <div id="quiz-options"></div>
-                    <div id="quiz-feedback"></div>
-                    <div id="quiz-results"></div>
-                    <button id="next-question-btn">下一題</button>
-                    <button id="restart-quiz-btn">返回挑戰主頁</button>
-                </div>
-            </div>`;
-        document.querySelectorAll('#quiz-part-selection button').forEach(button => {
-            button.addEventListener('click', (e) => {
-                currentQuizPart = e.target.dataset.part;
-                displayQuizQuestionSelection(currentQuizPart);
-            });
-        });
-        document.getElementById('restart-quiz-btn').addEventListener('click', displayQuizPartSelection);
-    }
-    
-    function displayQuizQuestionSelection(part) {
-        // This function's content remains the same...
-    }
-    
-    function startQuiz() {
-        // This function's content remains the same...
-    }
-    
-    // ... all other quiz functions (displayQuestion, checkMCQAnswer, etc.) remain unchanged
-
     // --- Initialization ---
     function init() {
+        // Generate main menu
         for (const mainId in database) {
             const button = document.createElement('button');
             button.textContent = database[mainId].title;
@@ -413,17 +362,23 @@ document.addEventListener('DOMContentLoaded', function() {
             button.addEventListener('click', handleMainClick);
             mainMenuContainer.appendChild(button);
         }
+
+        // Add search event listeners
         searchButton.addEventListener('click', performSearch);
         searchInput.addEventListener('keyup', (event) => {
             if (event.key === 'Enter') performSearch();
         });
         
-        // Display welcome message on initial load
+        // Display welcome message
         contentContainer.innerHTML = `
-            <h2>歡迎使用 DSE 中文範文精讀網站</h2>
-            <p>請從上方主目錄選擇一篇範文，開始您的學習之旅。</p>
-            <p>或在頂部搜尋欄輸入關鍵字，在所有篇章中快速查找資料。</p>
+            <div style="text-align: center;">
+                <h2>歡迎使用 DSE 中文範文精讀網站</h2>
+                <p>請從上方主目錄選擇一篇範文，開始您的學習之旅。</p>
+                <p>每個篇章都包含「課文原文」、「內容分析」以及全新的「互動溫習卡片」等部分。</p>
+                <p>您亦可在頂部搜尋欄輸入關鍵字，在所有篇章中快速查找資料。</p>
+            </div>
         `;
+        subMenuContainer.style.display = 'none';
     }
 
     init();
