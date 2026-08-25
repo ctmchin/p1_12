@@ -5,9 +5,225 @@ document.addEventListener('DOMContentLoaded', function() {
         "1": {
             title: "〈論仁論孝論君子〉",
             sections: {
-                "1.0": { title: "課文原文", content: `<h2>〈論仁論孝論君子〉原文</h2><h3>【論仁】</h3><p>子曰：「不仁者，不可以久處約，不可以長處樂。仁者安仁，知者利仁。」</p><p>子曰：「富與貴，是人之所欲也；不以其道得之，不處也。貧與賤，是人之所惡也；不以其道得之，不去也。君子去仁，惡乎成名？君子無終食之間違仁，造次必於是，顛沛必於是。」</p><p>顏淵問仁。子曰：「克己復禮為仁。一日克己復禮，天下歸仁焉。為仁由己，而由人乎哉？」顏淵曰：「請問其目。」子曰：「非禮勿視，非禮勿聽，非禮勿言，非禮勿動。」</p><p>子曰：「志士仁人，無求生以害仁，有殺身以成仁。」</p><h3>【論孝】</h3><p>孟懿子問孝。子曰：「無違。」樊遲御，子告之曰：「孟孫問孝於我，我對曰，無違。」樊遲曰：「何謂也？」子曰：「生，事之以禮；死，葬之以禮，祭之以禮。」</p><p>子游問孝。子曰：「今之孝者，是謂能養。至於犬馬，皆能有養；不敬，何以別乎！」</p><p>子曰：「事父母幾諫，見志不從，又敬不違，勞而不怨。」</p><p>子曰：「父母之年，不可不知也。一則以喜，一則以懼。」</p><h3>【論君子】</h3><p>子曰：「君子不重則不威；學則不固。主忠信。無友不如己者。過則勿憚改。」</p><p>子曰：「君子坦蕩蕩，小人長戚戚。」</p><p>司馬牛問君子。子曰：「君子不憂不懼。」曰：「不憂不懼，斯謂之君子已乎？」子曰：「內省不疚，夫何憂何懼？」</p><p>子曰：「君子成人之美，不成人之惡。小人反是。」</p><p>子曰：「君子恥其言而過其行。」</p><p>子曰：「君子義以為質，禮以行之，孫以出之，信以成之。君子哉！」</p><p>子曰：「君子病無能焉，不病人之不己知也。」</p><p>子曰：「君子求諸己，小人求諸人。」</p>` },
-                "1.6": { title: "互動溫習卡片", type: "flashcard" },
-                "1.7": { title: "互動答題挑戰", type: "quiz" }
+                "1.0": { title: "課文原文", content: `<h2>〈論仁論孝論君子〉原文</h2>
+                    <h3>【論仁】</h3>
+                    <p>子曰：「不仁者，不可以久處約，不可以長處樂。仁者安仁，知者利仁。」</p>
+                    <p>子曰：「富與貴，是人之所欲也；不以其道得之，不處也。貧與賤，是人之所惡也；不以其道得之，不去也。君子去仁，惡乎成名？君子無終食之間違仁，造次必於是，顛沛必於是。」</p>
+                    <p>顏淵問仁。子曰：「克己復禮為仁。一日克己復禮，天下歸仁焉。為仁由己，而由人乎哉？」顏淵曰：「請問其目。」子曰：「非禮勿視，非禮勿聽，非禮勿言，非禮勿動。」</p>
+                    <p>子曰：「志士仁人，無求生以害仁，有殺身以成仁。」</p>
+                    <h3>【論孝】</h3>
+                    <p>孟懿子問孝。子曰：「無違。」樊遲御，子告之曰：「孟孫問孝於我，我對曰，無違。」樊遲曰：「何謂也？」子曰：「生，事之以禮；死，葬之以禮，祭之以禮。」</p>
+                    <p>子游問孝。子曰：「今之孝者，是謂能養。至於犬馬，皆能有養；不敬，何以別乎！」</p>
+                    <p>子曰：「事父母幾諫，見志不從，又敬不違，勞而不怨。」</p>
+                    <p>子曰：「父母之年，不可不知也。一則以喜，一則以懼。」</p>
+                    <h3>【論君子】</h3>
+                    <p>子曰：「君子不重則不威；學則不固。主忠信。無友不如己者。過則勿憚改。」</p>
+                    <p>子曰：「君子坦蕩蕩，小人長戚戚。」</p>
+                    <p>司馬牛問君子。子曰：「君子不憂不懼。」曰：「不憂不懼，斯謂之君子已乎？」子曰：「內省不疚，夫何憂何懼？」</p>
+                    <p>子曰：「君子成人之美，不成人之惡。小人反是。」</p>
+                    <p>子曰：「君子恥其言而過其行。」</p>
+                    <p>子曰：「君子義以為質，禮以行之，孫以出之，信以成之。君子哉！」</p>
+                    <p>子曰：「君子病無能焉，不病人之不己知也。」</p>
+                    <p>子曰：「君子求諸己，小人求諸人。」</p>` 
+                },
+                "1.1": { title: "白話精華與段旨", content: `<h2>白話精華與段落大意 (原創編寫)</h2>
+                    <p>為了幫助同學快速掌握文意，以下撇除生硬的逐字翻譯，用現代白話提煉出孔子的核心思想：</p>
+                    <h3>第一部分：論仁 (道德的最高標準)</h3>
+                    <p><strong>段旨：闡述「仁」的本質、價值以及實踐的方法。</strong><br>
+                    孔子認為，沒有仁德的人無法承受長期的貧困，也無法駕馭長期的安樂。真正的仁者視「仁」為安身立命之本；而聰明人則明白行「仁」對自己長遠有利。<br>
+                    面對財富與地位，君子若不能用正當手段獲取，寧可不要；面對貧窮，若不能用正當手段擺脫，寧可忍受。君子哪怕是在吃一頓飯的極短時間、或在倉促、顛沛流離的危難中，也絕不會違背仁德。在生死關頭，志士仁人絕不會貪生怕死而損害仁義，反而會犧牲生命來成全仁德。<br>
+                    <strong>實踐方法：</strong>克制自己的私慾，使言行舉止完全符合「禮」的規範（非禮勿視、聽、言、動），並且明白修養仁德完全是依靠自己的決心。</p>
+                    
+                    <h3>第二部分：論孝 (家庭倫理的核心)</h3>
+                    <p><strong>段旨：指出盡孝不只在於物質供養，更在於內心的尊敬與守禮。</strong><br>
+                    孔子強調，對待父母，無論他們生前還是死後，一切都要合乎「禮」的規定。他嚴厲批評當時的人以為「只要給父母飯吃」就是孝順，孔子反問：我們也會飼養狗和馬，如果對父母沒有發自內心的「敬意」，那跟飼養禽獸有何分別？<br>
+                    此外，當父母有錯時，子女應委婉勸告。即便父母不聽，也要保持恭敬，不生怨恨。同時，為人子女必須將父母的年齡銘記於心，既為他們得享高壽而高興，也為他們年邁體衰而擔憂。</p>
+
+                    <h3>第三部分：論君子 (理想人格的典範)</h3>
+                    <p><strong>段旨：描繪君子在修養、心境與待人處事上的理想特質。</strong><br>
+                    君子注重儀表莊重，行事以忠信為本，勇於改正過錯。在心境上，君子因為經常自我反省、問心無愧，所以胸懷坦蕩，無憂無懼；相反，小人則經常患得患失。在待人方面，君子喜歡成全別人的好事，而且要求自己嚴格，不會苛求別人。<br>
+                    君子的言行一致，認為說大話而做不到是可恥的。君子以「義」為根本原則，用「禮」來實踐，用謙遜的言語表達，並用誠實的態度去完成事情。君子只擔心自己沒有能力，從不抱怨別人不賞識自己。</p>` 
+                },
+                "1.2": { title: "重點字詞與文言句式", content: `<h2>重點字詞與文言句式整理</h2>
+                    <p>掌握文言字詞的一字多義和特殊句式，是 DSE 文言文閱讀理解的搶分關鍵。</p>
+                    <h3>📌 重點一字多義</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                        <tr style="background-color: #3D5A80; color: white;">
+                            <th style="padding: 10px; border: 1px solid #ddd;">字詞</th>
+                            <th style="padding: 10px; border: 1px solid #ddd;">課文原句</th>
+                            <th style="padding: 10px; border: 1px solid #ddd;">本課字義</th>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">病</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">君子<b>病</b>無能焉</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">擔憂 / 擔心 (動詞)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">知</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;"><b>知</b>者利仁</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">通「智」，有智慧的人 (名詞)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">固</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">學則不<b>固</b></td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">鞏固 / 牢固 (形容詞)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">就</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">造次必於<b>是</b></td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">此 / 這 (代詞，指代「仁」)</td>
+                        </tr>
+                    </table>
+
+                    <h3>📌 重點文言句式</h3>
+                    <ul>
+                        <li><strong>倒裝句 (賓語前置)：</strong><br>
+                        「君子義以為質」<br>
+                        👉 正常語序應為「君子以義為質」。將賓語「義」提前，是為了強調「義」作為根本原則的重要性。</li>
+                        <li><strong>判斷句：</strong><br>
+                        「富與貴，是人之所欲也。」<br>
+                        👉 句末使用「也」字作結，構成文言文中常見的判斷語氣。</li>
+                        <li><strong>反問句 (激問)：</strong><br>
+                        「為仁由己，而由人乎哉？」<br>
+                        👉 用反問語氣加強肯定，強調實踐仁德完全取決於自己，絕非依靠他人。</li>
+                    </ul>` 
+                },
+                "1.3": { title: "核心思想深度剖析", content: `<h2>核心思想深度剖析 (DSE 答題素材)</h2>
+                    <p>這部分為你提供深入的論點分析，可用於長問答或寫作卷的論據拓展。</p>
+                    
+                    <h3>1. 「仁」與「禮」的相輔相成</h3>
+                    <p>孔子說「克己復禮為仁」，這說明了內在道德（仁）與外在規範（禮）的關係。「仁」是精神核心，是愛人、克制私慾的本心；而「禮」則是「仁」的具體行為表現。沒有「仁」的「禮」只是虛偽的形式；沒有「禮」的「仁」則流於空泛，缺乏社會實踐的標準。</p>
+
+                    <h3>2. 對「孝」的觀念昇華</h3>
+                    <p>在孔子之前，社會普遍認為「孝」等同於物質供養（能養）。孔子的偉大在於他把「孝」從物質層面提升到了精神層面。他提出「敬」，指出人類的孝行必須與飼養動物區分開來。此外，「幾諫」的觀念打破了「愚孝」的盲從，展現了既堅守正道，又維護親情的平衡智慧。</p>
+
+                    <h3>3. 君子的「內求」哲學</h3>
+                    <p>「君子求諸己，小人求諸人」是整篇關於君子論述的核心邏輯。君子的坦蕩、不怨天尤人、勇於改過，全因他們將責任歸於自身，專注於自我完善（病無能焉）。相反，小人因為不斷向外苛求，依賴外在的評價或利益，所以才會「長戚戚」（患得患失）。</p>` 
+                },
+                "1.4": { title: "寫作手法與藝術特色", content: `<h2>寫作手法與藝術特色</h2>
+                    <p>《論語》作為語錄體，雖然篇幅短小，但在修辭和說理技巧上極具特色，是我們學習寫作的極佳範本。</p>
+                    
+                    <h3>1. 鮮明的對比手法</h3>
+                    <p>文中透過強烈的正反對比來突出道理。例如：</p>
+                    <ul>
+                        <li><strong>君子 vs 小人：</strong>「坦蕩蕩」對比「長戚戚」；「求諸己」對比「求諸人」；「成人之美」對比「不成人之惡」。透過小人的負面行徑，將君子的高尚品德烘托得更為立體鮮明。</li>
+                        <li><strong>仁者 vs 不仁者：</strong>對比兩者在面對「約」(貧困) 和「樂」(安樂) 時的不同表現。</li>
+                    </ul>
+
+                    <h3>2. 層層遞進的排比</h3>
+                    <p>在解釋如何實踐「克己復禮」時，孔子連用四句：「非禮勿視，非禮勿聽，非禮勿言，非禮勿動」。句式完全一致，氣勢磅礴，從視覺、聽覺、言語到行動，全方位地涵蓋了一個人的所有行為，將抽象的「禮」具體化為極具操作性的守則。</p>
+
+                    <h3>3. 尖銳生動的借喻</h3>
+                    <p>「至於犬馬，皆能有養；不敬，何以別乎！」此句以「犬馬」作為借喻。用人類飼養動物的行為，來比喻那些只給父母飯吃卻毫無尊敬之心的不肖子女。這個比喻帶有強烈的諷刺意味，極具警醒作用，能瞬間點醒聽者。</p>` 
+                },
+                "1.5": { title: "原創進階多項選擇題", content: `<h2>DSE 題型：原創進階多項選擇題</h2>
+                    <p>這些題目旨在測試你對課文深層含義的理解。請先自己思考，然後點擊查看詳細解說。</p>
+                    
+                    <div style="margin-bottom: 25px; padding: 20px; border: 1px solid #dce1e6; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h4 style="color: #3D5A80;">1. 在〈論仁〉中，孔子說：「君子無終食之間違仁，造次必於是，顛沛必於是。」這句話最能說明「仁」的哪一項特質？</h4>
+                        <ol type="A" style="margin-bottom: 15px; line-height: 2;">
+                            <li>實踐仁德需要循序漸進，不能急於求成。</li>
+                            <li>仁德是君子內化的本性，不受時間與順逆境的干擾。</li>
+                            <li>只有在遇到挫折和顛沛流離時，才能考驗出真正的仁者。</li>
+                            <li>君子在飲食和日常起居中，必須嚴格遵守禮儀規範。</li>
+                        </ol>
+                        <details style="cursor: pointer;">
+                            <summary style="color: #3D5A80; font-weight: bold; padding: 10px; background-color: #E0FBFC; border-radius: 5px;">點擊查看答案及解說</summary>
+                            <div style="background-color: #f8f9fa; padding: 15px; border-left: 5px solid #28a745; margin-top: 10px; border-radius: 0 4px 4px 0;">
+                                <strong>正確答案：B</strong><br><br>
+                                <strong>解說：</strong>「終食之間」指吃一頓飯的極短時間；「造次」指倉卒匆忙；「顛沛」指流離失所。孔子強調，君子無論時間多短暫、環境多麼惡劣，都不會背棄仁德。這說明「仁」已經成為君子不可分割的本性，故選 B。
+                            </div>
+                        </details>
+                    </div>
+
+                    <div style="margin-bottom: 25px; padding: 20px; border: 1px solid #dce1e6; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h4 style="color: #3D5A80;">2. 綜合〈論君子〉的篇章，以下哪一項<b>不是</b>孔子所認為的君子特質？</h4>
+                        <ol type="A" style="margin-bottom: 15px; line-height: 2;">
+                            <li>重視實際行動，恥於誇誇其談。</li>
+                            <li>交友謹慎，只結交品德高尚的人。</li>
+                            <li>力求在眾人面前展現才能，以免懷才不遇。</li>
+                            <li>遇事向內反省，不將過失推卸給別人。</li>
+                        </ol>
+                        <details style="cursor: pointer;">
+                            <summary style="color: #3D5A80; font-weight: bold; padding: 10px; background-color: #E0FBFC; border-radius: 5px;">點擊查看答案及解說</summary>
+                            <div style="background-color: #f8f9fa; padding: 15px; border-left: 5px solid #dc3545; margin-top: 10px; border-radius: 0 4px 4px 0;">
+                                <strong>正確答案：C</strong><br><br>
+                                <strong>解說：</strong>C 選項錯誤，因為孔子明確指出「君子病無能焉，不病人之不己知也」。君子只擔憂自己沒有真才實學，並不會擔憂別人不賞識、不了解自己。A 對應「恥其言而過其行」；B 對應「無友不如己者」；D 對應「君子求諸己」。
+                            </div>
+                        </details>
+                    </div>
+
+                    <div style="margin-bottom: 25px; padding: 20px; border: 1px solid #dce1e6; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h4 style="color: #3D5A80;">3. 孔子教導子游和孟懿子關於「孝」的道理時，分別強調了什麼重點？</h4>
+                        <ol type="A" style="margin-bottom: 15px; line-height: 2;">
+                            <li>對子游強調「物質供養」；對孟懿子強調「委婉勸諫」。</li>
+                            <li>對子游強調「內心恭敬」；對孟懿子強調「依禮行事」。</li>
+                            <li>對子游強調「牢記父母年紀」；對孟懿子強調「內心恭敬」。</li>
+                            <li>對子游強調「依禮行事」；對孟懿子強調「物質供養」。</li>
+                        </ol>
+                        <details style="cursor: pointer;">
+                            <summary style="color: #3D5A80; font-weight: bold; padding: 10px; background-color: #E0FBFC; border-radius: 5px;">點擊查看答案及解說</summary>
+                            <div style="background-color: #f8f9fa; padding: 15px; border-left: 5px solid #28a745; margin-top: 10px; border-radius: 0 4px 4px 0;">
+                                <strong>正確答案：B</strong><br><br>
+                                <strong>解說：</strong>孔子答孟懿子問孝時說「無違」，即不違背「禮」（生，事之以禮；死，葬之以禮，祭之以禮）。答子游問孝時說「今之孝者，是謂能養...不敬，何以別乎！」，強調除了養之外，更重要的是「敬」。故選 B。
+                            </div>
+                        </details>
+                    </div>` 
+                },
+                "1.6": { title: "原創長問答訓練", content: `<h2>DSE 題型：原創長問答訓練</h2>
+                    <p>作答長題目時，緊記要<strong>「引文」+「解釋」+「申述/例子」</strong>。以下原創題目供你參考練習。</p>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: #3D5A80;">題目一：比較分析 (6分)</h4>
+                        <p>在〈論君子〉中，孔子多次將「君子」與「小人」並舉。試從「心境」及「對待他人」兩方面，分析君子與小人的分別，並各引一句原文作證。</p>
+                        
+                        <details style="cursor: pointer; margin-top: 15px;">
+                            <summary style="color: #3D5A80; font-weight: bold; padding: 10px; background-color: #f0f2f5; border-radius: 5px;">參考答案與評分準則</summary>
+                            <div style="background-color: #fff; padding: 15px; border: 1px solid #ddd; margin-top: 10px; line-height: 1.8;">
+                                <strong>1. 心境方面 (3分)：</strong><br>
+                                <ul>
+                                    <li><strong>引文：</strong>「君子坦蕩蕩，小人長戚戚。」(1分)</li>
+                                    <li><strong>分析：</strong>君子因為經常自我反省，行事依循仁義，做到問心無愧（內省不疚），所以心胸寬廣、平靜舒泰。相反，小人行事往往從私利出發，患得患失，所以經常感到憂愁恐懼、侷促不安。(2分)</li>
+                                </ul>
+                                <strong>2. 對待他人方面 (3分)：</strong><br>
+                                <ul>
+                                    <li><strong>引文：</strong>「君子成人之美，不成人之惡。小人反是。」(1分)</li>
+                                    <li><strong>分析：</strong>君子心懷善意，樂於幫助和成全別人的好事，阻止別人做壞事。而小人心胸狹隘、心懷嫉妒，見不得別人好，甚至會落井下石，促成別人的壞事。(2分)</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: #3D5A80;">題目二：概念理解 (4分)</h4>
+                        <p>孔子說：「事父母幾諫，見志不從，又敬不違，勞而不怨。」這是否代表孔子主張對父母「盲目順從」(愚孝)？試結合引文加以說明。</p>
+                        
+                        <details style="cursor: pointer; margin-top: 15px;">
+                            <summary style="color: #3D5A80; font-weight: bold; padding: 10px; background-color: #f0f2f5; border-radius: 5px;">參考答案與評分準則</summary>
+                            <div style="background-color: #fff; padding: 15px; border: 1px solid #ddd; margin-top: 10px; line-height: 1.8;">
+                                <strong>參考答案：</strong><br>
+                                <p>不是。孔子並不主張盲目順從的愚孝。(1分)</p>
+                                <p>引文指出「事父母幾諫」，意思是當父母有過錯時，子女有責任輕微、委婉地勸阻他們，這反映子女應具備明辨是非的能力，而非看到父母犯錯也盲目盲從。(1分)</p>
+                                <p>然而，孔子同時重視家庭倫理的「敬」。若父母不聽從勸告（見志不從），子女不能用強硬的態度頂撞，而應保持恭敬（又敬不違），並在內心為父母擔憂但不生怨恨（勞而不怨）。這體現了在「明辨是非」與「維護親情」之間取得平衡的智慧，絕非不辨是非的愚孝。(2分)</p>
+                            </div>
+                        </details>
+                    </div>` 
+                },
+                "1.7": { title: "現代意義與反思", content: `<h2>現代意義與生活反思</h2>
+                    <p>學習古典文學，最重要的是能將其智慧應用於現代生活。孔子的教誨，在幾千年後的今天依然擲地有聲。</p>
+                    
+                    <div style="background-color: #f0f2f5; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid #3D5A80;">
+                        <h3 style="margin-top: 0; color: #3D5A80;">💡 網絡時代的「慎言」與「求諸己」</h3>
+                        <p>孔子說：「君子恥其言而過其行」。在現今社交媒體發達的時代，人們很容易在網上發表長篇大論、高談闊論，甚至輕易批評他人（求諸人）。但我們是否能做到言行一致？在批評別人之前，我們有沒有先反省自己（君子求諸己）？真正的現代君子，應該是那些少說廢話、多做實事，並且嚴於律己的網民。</p>
+                    </div>
+
+                    <div style="background-color: #f0f2f5; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid #98C1D9;">
+                        <h3 style="margin-top: 0; color: #3D5A80;">💡 物質豐裕下的「真孝順」</h3>
+                        <p>現代社會物質相對豐富，給父母零用錢、請父母吃大餐（能養）似乎並不困難。但孔子提醒我們「不敬，何以別乎！」。如果我們給父母家用時態度不耐煩，或者在餐桌上只顧著滑手機而不與父母交流，缺乏了發自內心的關心和陪伴（敬），這就失去了孝的真正意義。真正的孝，是給予父母時間、耐心與尊重。</p>
+                    </div>` 
+                },
+                "1.8": { title: "互動溫習卡片", type: "flashcard" },
+                "1.9": { title: "互動答題挑戰", type: "quiz" }
             }
         },
         "2": {
