@@ -235,6 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentQuestionIndex = 0;
     let score = 0;
     let currentArticleId = null;
+    let currentHubSubId = null;
 
     // --- Utility ---
     function shuffleArray(array) {
@@ -277,18 +278,9 @@ document.addEventListener('DOMContentLoaded', function() {
         activeSubButton = event.target;
         activeSubButton.classList.add('active');
         
-        // 點擊主選單時，清除樞紐狀態
         currentHubSubId = null; 
         displayContent(mainId, subId);
     }
-
-    function displayContent(mainId, subId) {
-        const section = database[mainId].sections[subId];
-        // Populate the database content on demand
-        if (mainId && database[mainId] && database[mainId].sections[subId] && !database[mainId].sections[subId].content) {
-            // This is a placeholder for where you'd fetch content if it weren't pre-loaded.
-            // In our case, it's already in the database object.
-        }
 
     function displayContent(mainId, subId) {
         const section = database[mainId].sections[subId];
@@ -303,8 +295,8 @@ document.addEventListener('DOMContentLoaded', function() {
             contentContainer.innerHTML = section.content;
         }
     }
-    
-    // --- 全新：互動溫習樞紐 (Hub) Logic ---
+
+    // --- 互動溫習樞紐 (Hub) Logic ---
     function displayHub(mainId, subId) {
         const section = database[mainId].sections[subId];
         const themeColor = dataPool[mainId] ? dataPool[mainId].themeColor : 'var(--primary-color)';
@@ -328,7 +320,6 @@ document.addEventListener('DOMContentLoaded', function() {
         hubMenuHTML += `</div></div>`;
         contentContainer.innerHTML = `<h2 style="color: ${themeColor}; border-bottom: 3px solid ${themeColor};">${section.title}</h2>` + hubMenuHTML;
 
-        // 加入互動特效與點擊事件
         document.querySelectorAll('.hub-item-btn').forEach(btn => {
             btn.addEventListener('mouseover', function() {
                 this.style.backgroundColor = themeColor;
@@ -348,13 +339,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 處理樞紐內的項目點擊
     function displayHubItem(mainId, subId, itemId) {
-        currentHubSubId = subId; // 記錄當前處於哪一個 Hub，方便測驗結束後返回
+        currentHubSubId = subId; 
         const item = database[mainId].sections[subId].items[itemId];
         const themeColor = dataPool[mainId] ? dataPool[mainId].themeColor : 'var(--primary-color)';
         
-        // 頂部的返回按鈕
         const backBtnHTML = `
             <button onclick="document.querySelector('[data-sub-id=\\'${subId}\\']').click()"
             style="margin-bottom: 25px; padding: 10px 20px; background-color: #f0f2f5; border: 1px solid #dce1e6; border-radius: 50px; color: ${themeColor}; cursor: pointer; font-weight: bold; display: inline-flex; align-items: center; gap: 5px; transition: 0.2s;">
@@ -371,7 +360,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // 動態獲取返回按鈕（用於測驗重新開始或完成時）
     function getBackBtnHTML() {
         if (!currentHubSubId) return '';
         const themeColor = dataPool[currentArticleId] ? dataPool[currentArticleId].themeColor : 'var(--primary-color)';
@@ -383,7 +371,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
     }
 
-    // --- Flashcard Logic (已更新支援 prependHTML 與自訂標題) ---
+    // --- Flashcard Logic ---
     function displayFlashcards(mainId, prependHTML = '', customTitle = null) {
         const articleData = dataPool[mainId];
         if (!articleData || !articleData.data) return;
@@ -420,14 +408,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Quiz Logic (已更新支援 prependHTML 與自訂標題) ---
+    // --- Quiz Logic ---
     function displayQuizStartScreen(mainId, prependHTML = '', customTitle = null) {
         currentArticleId = mainId;
         const articleData = dataPool[mainId];
         const maxQuestions = articleData.data.length;
         const displayTitle = customTitle ? `${articleData.title} - ${customTitle}` : `${articleData.title} - 互動答題挑戰`;
         
-        // 如果沒有傳入 prependHTML，試著拿取全域的返回按鈕
         const backBtn = prependHTML || getBackBtnHTML();
 
         contentContainer.innerHTML = backBtn + `
@@ -561,10 +548,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!query) return;
         const results = [];
         const tempDiv = document.createElement('div');
+        
         for (const mainId in database) {
             for (const subId in database[mainId].sections) {
                 const section = database[mainId].sections[subId];
+                
+                // 跳過這些類型不搜尋
                 if (section.type === 'quiz' || section.type === 'flashcard' || section.type === 'hub') continue;
+                
                 tempDiv.innerHTML = section.content || "";
                 const contentText = tempDiv.textContent || tempDiv.innerText || "";
                 if (contentText.toLowerCase().includes(query)) {
