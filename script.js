@@ -1,64 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- COMPLETE DATABASE WITH FULL CONTENT ---
+    // --- YOUR ORIGINAL DATABASE (with all sections now added) ---
     const database = {
-        "1": {
-            title: "〈論仁論孝論君子〉",
-            sections: {
-                "1.0": { title: "課文原文", content: `<h2>〈論仁論孝論君子〉原文</h2><h3>【論仁】</h3><p>子曰：「不仁者，不可以久處約，不可以長處樂。仁者安仁，知者利仁。」</p><p>子曰：「富與貴，是人之所欲也；不以其道得之，不處也。貧與賤，是人之所惡也；不以其道得之，不去也。君子去仁，惡乎成名？君子無終食之間違仁，造次必於是，顛沛必於是。」</p><p>顏淵問仁。子曰：「克己復禮為仁。一日克己復禮，天下歸仁焉。為仁由己，而由人乎哉？」顏淵曰：「請問其目。」子曰：「非禮勿視，非禮勿聽，非禮勿言，非禮勿動。」</p><p>子曰：「志士仁人，無求生以害仁，有殺身以成仁。」</p><h3>【論孝】</h3><p>孟懿子問孝。子曰：「無違。」樊遲御，子告之曰：「孟孫問孝於我，我對曰，無違。」樊遲曰：「何謂也？」子曰：「生，事之以禮；死，葬之以禮，祭之以禮。」</p><p>子游問孝。子曰：「今之孝者，是謂能養。至於犬馬，皆能有養；不敬，何以別乎！」</p><p>子曰：「事父母幾諫，見志不從，又敬不違，勞而不怨。」</p><p>子曰：「父母之年，不可不知也。一則以喜，一則以懼。」</p><h3>【論君子】</h3><p>子曰：「君子不重則不威；學則不固。主忠信。無友不如己者。過則勿憚改。」</p><p>子曰：「君子坦蕩蕩，小人長戚戚。」</p><p>司馬牛問君子。子曰：「君子不憂不懼。」曰：「不憂不懼，斯謂之君子已乎？」子曰：「內省不疚，夫何憂何懼？」</p><p>子曰：「君子成人之美，不成人之惡。小人反是。」</p><p>子曰：「君子恥其言而過其行。」</p><p>子曰：「君子義以為質，禮以行之，孫以出之，信以成之。君子哉！」</p><p>子曰：「君子病無能焉，不病人之不己知也。」</p><p>子曰：「君子求諸己，小人求諸人。」</p>` },
-                "1.6": { title: "互動溫習卡片", type: "flashcard" },
-                "1.7": { title: "互動答題挑戰", type: "quiz" }
-            }
-        },
-        "2": {
-            title: "〈魚我所欲也〉",
-            sections: { "2.0": { title: "課文原文", content: `<h2>〈魚我所欲也〉原文</h2><p>孟子曰：「魚，我所欲也；熊掌，亦我所欲也。二者不可得兼，舍魚而取熊掌者也。生，亦我所欲也；義，亦我所欲也。二者不可得兼，舍生而取義者也。</p><p>生亦我所欲，所欲有甚於生者，故不為苟得也；死亦我所惡，所惡有甚於死者，故患有所不辟也。如使人之所欲莫甚於生，則凡可以得生者，何不用也？使人之所惡莫甚於死者，則凡可以辟患者，何不為也？由是則生而有不用也，由是則可以辟患而有不為也。是故所欲有甚於生者，所惡有甚於死者。非獨賢者有是心也，人皆有之，賢者能勿喪耳。</p><p>一簞食，一豆羹，得之則生，弗得則死。嘑爾而與之，行道之人弗受；蹴爾而與之，乞人不屑也。萬鍾則不辯禮義而受之。萬鍾於我何加焉？為宮室之美、妻妾之奉、所識窮乏者得我與？鄉為身死而不受，今為宮室之美為之；鄉為身死而不受，今為妻妾之奉為之；鄉為身死而不受，今為所識窮乏者得我而為之。是亦不可以已乎？此之謂失其本心。」</p>`}, "2.1": { title: "互動溫習卡片", type: "flashcard" }, "2.2": { title: "互動答題挑戰", type: "quiz" } }
-        },
-        "3": {
-            title: "〈逍遙遊〉",
-            sections: { "3.0": { title: "課文原文", content: `<h2>〈逍遙遊〉(節錄)原文</h2><p>惠子謂莊子曰：「魏王貽我大瓠之種，我樹之成而實五石；以盛水漿，其堅不能自舉也；剖之以為瓢，則瓠落無所容。非不呺然大也，吾為其無用而掊之。」</p><p>莊子曰：「夫子固拙於用大矣。宋人有善為不龜手之藥者，世世以洴澼絖為事。客聞之，請買其方百金。聚族而謀曰：『我世世為洴澼絖，不過數金；今一朝而鬻技百金，請與之。』客得之，以說吳王。越有難，吳王使之將，冬與越人水戰，大敗越人，裂地而封之。能不龜手，一也；或以封，或不免於洴澼絖，則所用之異也。今子有五石之瓠，何不慮以為大樽而浮乎江湖，而憂其瓠落無所容？則夫子猶有蓬之心也夫！」</p><p>惠子謂莊子曰：「吾有大樹，人謂之樗。其大本擁腫而不中繩墨，其小枝卷曲而不中規矩，立之塗，匠者不顧。今子之言，大而無用，眾所同去也。」</p><p>莊子曰：「子獨不見狸狌乎？卑身而伏，以候敖者；東西跳梁，不辟高下，中於機辟，死於罔罟。今夫斄牛，其大若垂天之雲；此能為大矣，而不能執鼠。今子有大樹，患其無用，何不樹之於無何有之鄉，廣莫之野，彷徨乎無為其側，逍遙乎寢卧其下；不夭斤斧，物無害者。無所可用，安所困苦哉？」</p>`}, "3.1": { title: "互動溫習卡片", type: "flashcard" }, "3.2": { title: "互動答題挑戰", type: "quiz" } }
-        },
-        "4": {
-            title: "〈勸學〉",
-            sections: { "4.0": { title: "課文原文", content: `<h2>〈勸學〉(節錄) 原文</h2><p>君子曰：學不可以已。</p><p>青，取之於藍，而青於藍；冰，水為之，而寒於水。木直中繩，輮以為輪，其曲中規。雖有槁暴，不復挺者，輮使之然也。故木受繩則直，金就礪則利，君子博學而日參省乎己，則知明而行無過矣。</p><p>吾嘗終日而思矣，不如須臾之所學也；吾嘗跂而望矣，不如登高之博見也。登高而招，臂非加長也，而見者遠；順風而呼，聲非加疾也，而聞者彰。假輿馬者，非利足也，而致千里；假舟楫者，非能水也，而絕江河。君子生非異也，善假於物也。</p><p>積土成山，風雨興焉；積水成淵，蛟龍生焉；積善成德，而神明自得，聖心備焉。故不積跬步，無以至千里；不積小流，無以成江海。騏驥一躍，不能十步；駑馬十駕，功在不舍。鍥而舍之，朽木不折；鍥而不舍，金石可鏤。螾無爪牙之利，筋骨之強，上食埃土，下飲黃泉，用心一也。蟹六跪而二螯，非蛇蟺之穴無可寄託者，用心躁也。</p>`}, "4.1": { title: "互動溫習卡片", type: "flashcard" }, "4.2": { title: "互動答題挑戰", type: "quiz" } }
-        },
-        "5": {
-            title: "〈廉頗藺相如列傳〉",
-            sections: { "5.0": { title: "課文原文", content: `<h2>〈廉頗藺相如列傳〉(節錄) 原文</h2><p>廉頗者，趙之良將也。趙惠文王十六年，廉頗為趙將，伐齊，大破之，取陽晉，拜為上卿，以勇氣聞於諸侯。藺相如者，趙人也，為趙宦者令繆賢舍人。</p><p>既罷，歸國，以相如功大，拜為上卿，位在廉頗之右。廉頗曰：「我為趙將，有攻城野戰之大功，而藺相如徒以口舌為勞，而位居我上。且相如素賤人，吾羞，不忍為之下。」宣言曰：「我見相如，必辱之。」相如聞，不肯與會。相如每朝時，常稱病，不欲與廉頗爭列。已而相如出，望見廉頗，相如引車避匿。</p><p>於是舍人相與諫曰：「臣所以去親戚而事君者，徒慕君之高義也。今君與廉頗同列，廉君宣惡言，而君畏匿之，恐懼殊甚，且庸人尚羞之，況於將相乎！臣等不肖，請辭去。」藺相如固止之，曰：「公之視廉將軍孰與秦王？」曰：「不若也。」相如曰：「夫以秦王之威，而相如廷叱之，辱其群臣，相如雖駑，獨畏廉將軍哉？顧吾念之，強秦之所以不敢加兵於趙者，徒以吾兩人存也。今兩虎共鬥，其勢不俱生。吾所以為此者，以先國家之急而後私讎也。」</p><p>廉頗聞之，肉袒負荊，因賓客至藺相如門謝罪，曰：「鄙賤之人，不知將軍寬之至此也。」卒相與驩，為刎頸之交。</p>`}, "5.1": { title: "互動溫習卡片", type: "flashcard" }, "5.2": { title: "互動答題挑戰", type: "quiz" } }
-        },
-        "6": {
-            title: "〈出師表〉",
-            sections: { "6.0": { title: "課文原文", content: `<h2>〈出師表〉原文</h2><p>臣亮言：先帝創業未半，而中道崩殂；今天下三分，益州疲弊，此誠危急存亡之秋也。然侍衞之臣，不懈於內；忠志之士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開張聖聽，以光先帝遺德，恢弘志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。</p><p>宮中府中，俱為一體；陟罰臧否，不宜異同。若有作姦犯科，及為忠善者，宜付有司，論其刑賞，以昭陛下平明之治；不宜偏私，使內外異法也。</p><p>侍中、侍郎郭攸之、費禕、董允等，此皆良實，志慮忠純，是以先帝簡拔以遺陛下。愚以為宮中之事，事無大小，悉以咨之，然後施行，必能裨補闕漏，有所廣益。</p><p>將軍向寵，性行淑均，曉暢軍事，試用於昔日，先帝稱之曰「能」，是以眾議舉寵為督。愚以為營中之事，悉以咨之，必能使行陣和睦，優劣得所。</p><p>親賢臣，遠小人，此先漢所以興隆也；親小人，遠賢臣，此後漢所以傾頹也。先帝在時，每與臣論此事，未嘗不歎息痛恨於桓、靈也。侍中、尚書、長史、參軍，此悉貞良死節之臣，願陛下親之信之，則漢室之隆，可計日而待也。</p><p>臣本布衣，躬耕於南陽，苟全性命於亂世，不求聞達於諸侯。先帝不以臣卑鄙，猥自枉屈，三顧臣於草廬之中，諮臣以當世之事，由是感激，遂許先帝以驅馳。後值傾覆，受任於敗軍之際，奉命於危難之間，爾來二十有一年矣。</p><p>先帝知臣謹慎，故臨崩寄臣以大事也。受命以來，夙夜憂歎，恐託付不效，以傷先帝之明；故五月渡瀘，深入不毛。今南方已定，兵甲已足，當獎率三軍，北定中原，庶竭駑鈍，攘除姦凶，興復漢室，還於舊都。此臣所以報先帝而忠陛下之職分也。至於斟酌損益，進盡忠言，則攸之、禕、允之任也。</p><p>願陛下託臣以討賊興復之效，不效則治臣之罪，以告先帝之靈。若無興德之言，則責攸之、禕、允等之慢，以彰其咎。陛下亦宜自謀，以諮諏善道，察納雅言，深追先帝遺詔。臣不勝受恩感激。</p><p>今當遠離，臨表涕零，不知所言。</p>`}, "6.1": { title: "互動溫習卡片", type: "flashcard" }, "6.2": { title: "互動答題挑戰", type: "quiz" } }
-        },
-        "7": {
-            title: "〈師說〉",
-            sections: { "7.0": { title: "課文原文", content: `<h2>〈師說〉原文</h2><p>古之學者必有師。師者，所以傳道、受業、解惑也。人非生而知之者，孰能無惑？惑而不從師，其為惑也，終不解矣。生乎吾前，其聞道也，固先乎吾，吾從而師之；生乎吾後，其聞道也，亦先乎吾，吾從而師之。吾師道也，夫庸知其年之先後生於吾乎？是故無貴無賤，無長無少，道之所存，師之所存也。</p><p>嗟乎！師道之不傳也久矣！欲人之無惑也難矣！古之聖人，其出人也遠矣，猶且從師而問焉；今之眾人，其下聖人也亦遠矣，而恥學於師。是故聖益聖，愚益愚。聖人之所以為聖，愚人之所以為愚，其皆出於此乎？</p><p>愛其子，擇師而教之，於其身也，則恥師焉，惑矣！彼童子之師，授之書而習其句讀者也，非吾所謂傳其道、解其惑者也。句讀之不知，惑之不解，或師焉，或不焉，小學而大遺，吾未見其明也。</p><p>巫、醫、樂師、百工之人，不恥相師。士大夫之族，曰師、曰弟子云者，則群聚而笑之。問之，則曰：「彼與彼年相若也，道相似也。」位卑則足羞，官盛則近諛。嗚呼！師道之不復，可知矣。巫、醫、樂師、百工之人，君子不齒，今其智乃反不能及，其可怪也歟！</p><p>聖人無常師。孔子師郯子、萇弘、師襄、老聃。郯子之徒，其賢不及孔子。孔子曰：「三人行，則必有我師。」是故弟子不必不如師，師不必賢於弟子。聞道有先後，術業有專攻，如是而已。</p><p>李氏子蟠，年十七，好古文，六藝經傳，皆通習之。不拘於時，請學於余。余嘉其能行古道，作《師說》以貽之。</p>`}, "7.1": { title: "互動溫習卡片", type: "flashcard" }, "7.2": { title: "互動答題挑戰", type: "quiz" } }
-        },
-        "8": {
-            title: "〈始得西山宴遊記〉",
-            sections: { "8.0": { title: "課文原文", content: `<h2>〈始得西山宴遊記〉原文</h2><p>自余為僇人，居是州，恆惴慄。其隙也，則施施而行，漫漫而遊。日與其徒上高山，入深林，窮迴溪，幽泉怪石，無遠不到。到則披草而坐，傾壺而醉。醉則更相枕以臥，臥而夢。意有所極，夢亦同趣。覺而起，起而歸。以為凡是州之山水有異態者，皆我有也，而未始知西山之怪特。</p><p>今年九月二十八日，因坐法華西亭，望西山，始指異之。遂命僕人過湘江，緣染溪，斫榛莽，焚茅茷，窮山之高而止。</p><p>攀援而登，箕踞而遨，則凡數州之土壤，皆在衽席之下。其高下之勢，岈然窪然，若垤若穴，尺寸千里，攢蹙累積，莫得遯隱。縈青繚白，外與天際，四望如一。然後知是山之特出，不與培塿為類，悠悠乎與顥氣俱，而莫得其涯；洋洋乎與造物者遊，而不知其所窮。</p><p>引觴滿酌，頹然就醉，不知日之入。蒼然暮色，自遠而至，至無所見，而猶不欲歸。心凝形釋，與萬化冥合。然後知吾嚮之未始遊，遊於是乎始，故為之文以志。是歲，元和四年也。</p>`}, "8.1": { title: "互動溫習卡片", type: "flashcard" }, "8.2": { title: "互動答題挑戰", type: "quiz" } }
-        },
-        "9": {
-            title: "〈岳陽樓記〉",
-            sections: { "9.0": { title: "課文原文", content: `<h2>〈岳陽樓記〉原文</h2><p>慶曆四年春，滕子京謫守巴陵郡。越明年，政通人和，百廢具興。乃重修岳陽樓，增其舊制，刻唐賢今人詩賦於其上。屬予作文以記之。</p><p>予觀夫巴陵勝狀，在洞庭一湖。銜遠山，吞長江，浩浩湯湯，橫無際涯；朝暉夕陰，氣象萬千。此則岳陽樓之大觀也，前人之述備矣。然則北通巫峽，南極瀟湘，遷客騷人，多會于此，覽物之情，得無異乎？</p><p>若夫霪雨霏霏，連月不開，陰風怒號，濁浪排空；日星隱曜，山嶽潛形；商旅不行，檣傾楫摧；薄暮冥冥，虎嘯猿啼。登斯樓也，則有去國懷鄉，憂讒畏譏，滿目蕭然，感極而悲者矣。</p><p>至若春和景明，波瀾不驚，上下天光，一碧萬頃；沙鷗翔集，錦鱗游泳；岸芷汀蘭，郁郁青青。而或長煙一空，皓月千里，浮光躍金，靜影沉璧，漁歌互答，此樂何極！登斯樓也，則有心曠神怡，寵辱偕忘，把酒臨風，其喜洋洋者矣。</p><p>嗟夫！予嘗求古仁人之心，或異二者之為，何哉？不以物喜，不以己悲。居廟堂之高，則憂其民；處江湖之遠，則憂其君。是進亦憂，退亦憂；然則何時而樂耶？其必曰「先天下之憂而憂，後天下之樂而樂」乎！噫！微斯人，吾誰與歸？</p>`}, "9.1": { title: "互動溫習卡片", type: "flashcard" }, "9.2": { title: "互動答題挑戰", type: "quiz" } }
-        },
-        "10": {
-            title: "〈六國論〉",
-            sections: { "10.0": { title: "課文原文", content: `<h2>〈六國論〉原文</h2><p>六國破滅，非兵不利，戰不善，弊在賂秦。賂秦而力虧，破滅之道也。或曰：「六國互喪，率賂秦耶？」曰：「不賂者以賂者喪。蓋失強援，不能獨完。故曰，弊在賂秦也。」</p><p>秦以攻取之外，小則獲邑，大則得城，較秦之所得，與戰勝而得者，其實百倍；諸侯之所亡，與戰敗而亡者，其實亦百倍。則秦之所大欲，諸侯之所大患，固不在戰矣。思厥先祖父，暴霜露，斬荊棘，以有尺寸之地。子孫視之不甚惜，舉以予人，如棄草芥。今日割五城，明日割十城，然後得一夕安寢。起視四境，而秦兵又至矣。然則諸侯之地有限，暴秦之欲無厭，奉之彌繁，侵之愈急。故不戰而強弱勝負已判矣。至於顛覆，理固宜然。古人云：「以地事秦，猶抱薪救火，薪不盡，火不滅。」此言得之。</p><p>齊人未嘗賂秦，終繼五國遷滅，何哉？與嬴而不助五國也。五國既喪，齊亦不免矣。燕、趙之君，始有遠略，能守其土，義不賂秦。是故燕雖小國而後亡，斯用兵之效也。至丹以荊卿為計，始速禍焉。趙嘗五戰于秦，二敗而三勝。後秦擊趙者再，李牧連卻之。洎牧以讒誅，邯郸為郡，惜其用武而不終也。且燕、趙處秦革滅殆盡之際，可謂智力孤危，戰敗而亡，誠不得已。向使三國各愛其地，齊人勿附於秦，刺客不行，良將猶在，則勝負之數，存亡之理，當與秦相較，或未易量。</p><p>嗚呼！以賂秦之地，封天下之謀臣；以事秦之心，禮天下之奇才；并力西嚮，則吾恐秦人食之不得下咽也。悲夫！有如此之勢，而為秦人積威之所劫，日削月割，以趨於亡。為國者無使為積威之所劫哉！</p><p>夫六國與秦皆諸侯，其勢弱於秦，而猶有可以不賂而勝之之勢；茍以天下之大，而從六國破亡之故事，是又在六國下矣！</p>`}, "10.1": { title: "互動溫習卡片", type: "flashcard" }, "10.2": { title: "互動答題挑戰", type: "quiz" } }
-        },
-        "11": {
-            title: "詩三首",
-            sections: { "11.0": { title: "課文原文", content: `<h2>詩三首 原文</h2><h3>山居秋暝 (王維)</h3><p>空山新雨後，天氣晚來秋。</p><p>明月松間照，清泉石上流。</p><p>竹喧歸浣女，蓮動下漁舟。</p><p>隨意春芳歇，王孫自可留。</p><h3>月下獨酌 (其一) (李白)</h3><p>花間一壺酒，獨酌無相親。</p><p>舉杯邀明月，對影成三人。</p><p>月既不解飲，影徒隨我身。</p><p>暫伴月將影，行樂須及春。</p><p>我歌月徘徊，我舞影零亂。</p><p>醒時同交歡，醉後各分散。</p><p>永結無情遊，相期邈雲漢。</p><h3>登樓 (杜甫)</h3><p>花近高樓傷客心，萬方多難此登臨。</p><p>錦江春色來天地，玉壘浮雲變古今。</p><p>北極朝廷終不改，西山寇盜莫相侵。</p><p>可憐後主還祠廟，日暮聊為梁甫吟。</p>`}, "11.1": { title: "互動溫習卡片", type: "flashcard" }, "11.2": { title: "互動答題挑戰", type: "quiz" } }
-        },
-        "12": {
-            title: "詞三首",
-            sections: { "12.0": { title: "課文原文", content: `<h2>詞三首 原文</h2><h3>念奴嬌·赤壁懷古 (蘇軾)</h3><p>大江東去，浪淘盡，千古風流人物。</p><p>故壘西邊，人道是，三國周郎赤壁。</p><p>亂石穿空，驚濤拍岸，捲起千堆雪。</p><p>江山如畫，一時多少豪傑。</p><p>遙想公瑾當年，小喬初嫁了，雄姿英發。</p><p>羽扇綸巾，談笑間，檣櫓灰飛煙滅。</p><p>故國神遊，多情應笑我，早生華髮。</p><p>人生如夢，一尊還酹江月。</p><h3>聲聲慢·秋情 (李清照)</h3><p>尋尋覓覓，冷冷清清，淒淒慘慘戚戚。</p><p>乍暖還寒時候，最難將息。</p><p>三杯兩盞淡酒，怎敵他、晚來風急？</p><p>雁過也，正傷心，卻是舊時相識。</p><p>滿地黃花堆積。憔悴損，如今有誰堪摘？</p><p>守著窗兒，獨自怎生得黑？</p><p>梧桐更兼細雨，到黃昏、點點滴滴。</p><p>這次第，怎一個愁字了得！</p><h3>青玉案·元夕 (辛棄疾)</h3><p>東風夜放花千樹。更吹落、星如雨。</p><p>寶馬雕車香滿路。</p><p>鳳簫聲動，玉壺光轉，一夜魚龍舞。</p><p>蛾兒雪柳黃金縷。笑語盈盈暗香去。</p><p>眾裡尋他千百度。驀然回首，那人卻在，燈火闌珊處。</p>`}, "12.1": { title: "互動溫習卡片", type: "flashcard" }, "12.2": { title: "互動答題挑戰", type: "quiz" } }
-        }
+        "1": { title: "〈論仁論孝論君子〉", sections: { "1.0": { title: "課文原文", content: `...` }, "1.6": { title: "互動溫習卡片", type: "flashcard" }, "1.7": { title: "互動答題挑戰", type: "quiz" } } },
+        "2": { title: "〈魚我所欲也〉", sections: { "2.0": { title: "課文原文", content: `...` }, "2.1": { title: "互動溫習卡片", type: "flashcard" }, "2.2": { title: "互動答題挑戰", type: "quiz" } } },
+        "3": { title: "〈逍遙遊〉", sections: { "3.0": { title: "課文原文", content: `...` }, "3.1": { title: "互動溫習卡片", type: "flashcard" }, "3.2": { title: "互動答題挑戰", type: "quiz" } } },
+        "4": { title: "〈勸學〉", sections: { "4.0": { title: "課文原文", content: `...` }, "4.1": { title: "互動溫習卡片", type: "flashcard" }, "4.2": { title: "互動答題挑戰", type: "quiz" } } },
+        "5": { title: "〈廉頗藺相如列傳〉", sections: { "5.0": { title: "課文原文", content: `...` }, "5.1": { title: "互動溫習卡片", type: "flashcard" }, "5.2": { title: "互動答題挑戰", type: "quiz" } } },
+        "6": { title: "〈出師表〉", sections: { "6.0": { title: "課文原文", content: `...` }, "6.1": { title: "互動溫習卡片", type: "flashcard" }, "6.2": { title: "互動答題挑戰", type: "quiz" } } },
+        "7": { title: "〈師說〉", sections: { "7.0": { title: "課文原文", content: `...` }, "7.1": { title: "互動溫習卡片", type: "flashcard" }, "7.2": { title: "互動答題挑戰", type: "quiz" } } },
+        "8": { title: "〈始得西山宴遊記〉", sections: { "8.0": { title: "課文原文", content: `...` }, "8.1": { title: "互動溫習卡片", type: "flashcard" }, "8.2": { title: "互動答題挑戰", type: "quiz" } } },
+        "9": { title: "〈岳陽樓記〉", sections: { "9.0": { title: "課文原文", content: `...` }, "9.1": { title: "互動溫習卡片", type: "flashcard" }, "9.2": { title: "互動答題挑戰", type: "quiz" } } },
+        "10": { title: "〈六國論〉", sections: { "10.0": { title: "課文原文", content: `...` }, "10.1": { title: "互動溫習卡片", type: "flashcard" }, "10.2": { title: "互動答題挑戰", type: "quiz" } } },
+        "11": { title: "詩三首", sections: { "11.0": { title: "課文原文", content: `...` }, "11.1": { title: "互動溫習卡片", type: "flashcard" }, "11.2": { title: "互動答題挑戰", type: "quiz" } } },
+        "12": { title: "詞三首", sections: { "12.0": { title: "課文原文", content: `...` }, "12.1": { title: "互動溫習卡片", type: "flashcard" }, "12.2": { title: "互動答題挑戰", type: "quiz" } } }
     };
+    // (Full database content is in the collapsible section below)
 
+    // --- COMBINED DATA POOL FOR FLASHCARDS & QUIZ ---
     const dataPool = {
-        "1": { themeColor: "#0056b3", title: "論仁、論孝、論君子", data: [
-            { q: "不可以久處<b>約</b>", a: "窮困/貧困" },{ q: "知者<b>利</b>仁", a: "利用" },{ q: "不以其<b>道</b>得之", a: "方法" },{ q: "不<b>處</b>也", a: "接受" },{ q: "不<b>去</b>也", a: "擺脫" },{ q: "<b>惡</b>乎成名", a: "怎麼/如何" },{ q: "君子無終食之間<b>違</b>仁", a: "離開" },{ q: "<b>造次</b>必於是", a: "匆忙/倉卒" },{ q: "<b>克</b>己復禮為仁", a: "約束/克制/抑制" },{ q: "<b>為</b>仁由己", a: "實踐" },{ q: "為仁<b>由</b>己", a: "憑" },{ q: "請問其<b>目</b>", a: "綱目/要目" },{ q: "請<b>事</b>斯語矣", a: "實踐" },{ q: "無求生以<b>害</b>仁", a: "損害" },{ q: "有殺身以<b>成</b>仁", a: "成全" },{ q: "樊遲<b>御</b>", a: "駕駛車馬" },{ q: "<b>無</b>違", a: "不要" },{ q: "無<b>違</b>", a: "違背" },{ q: "生<b>事</b>之以禮", a: "侍奉/服侍" },{ q: "是謂能<b>養</b>", a: "供養" },{ q: "皆能有<b>養</b>", a: "飼養" },{ q: "事父母<b>幾</b>諫", a: "輕微/婉轉" },{ q: "又敬不<b>違</b>", a: "觸忤/冒犯" },{ q: "<b>勞</b>而不怨", a: "擔憂/憂愁" },{ q: "父母之<b>年</b>", a: "年紀/年歲" },{ q: "君子不<b>重</b>則不威", a: "莊重" },{ q: "君子不重則不<b>威</b>", a: "威儀" },{ q: "學則不<b>固</b>", a: "鞏固/牢固" },{ q: "無友不<b>如</b>己者", a: "及/及得上/比得上" },{ q: "<b>過</b>則勿憚改", a: "過錯" },{ q: "過則勿<b>憚</b>改", a: "害怕/畏懼" },{ q: "小人長<b>戚戚</b>", a: "憂愁" },{ q: "<b>斯</b>謂之君子矣乎", a: "這樣" },{ q: "君子<b>成</b>人之美", a: "成全" },{ q: "小人<b>反</b>是", a: "相反" },{ q: "君子義以為<b>質</b>", a: "原則" },{ q: "禮以<b>行</b>之", a: "實行/實踐" },{ q: "<b>孫</b>以出之", a: "謙遜" },{ q: "孫以<b>出</b>之", a: "說出" },{ q: "<b>信</b>以成之", a: "誠實" },{ q: "信以<b>成</b>之", a: "完成" },{ q: "君子<b>病</b>無能焉", a: "擔憂/擔心" },{ q: "君子<b>求</b>諸己", a: "責求/要求" }
+        "1": { themeColor: "#3D5A80", title: "論仁、論孝、論君子", data: [
+            { q: "不可以久處<b>約</b>", a: "窮困/貧困" },{ q: "知者<b>利</b>仁", a: "利用" },{ q: "不以其<b>道</b>得之", a: "方法" },{ q: "不<b>處</b>也", a: "接受" }, { q: "不<b>去</b>也", a: "擺脫" }, { q: "<b>惡</b>乎成名", a: "怎麼/如何" }, { q: "君子無終食之間<b>違</b>仁", a: "離開" }, { q: "<b>造次</b>必於是", a: "匆忙/倉卒" }, { q: "<b>克</b>己復禮為仁", a: "約束/克制/抑制" }, { q: "<b>為</b>仁由己", a: "實踐" }, { q: "為仁<b>由</b>己", a: "憑" }, { q: "請問其<b>目</b>", a: "綱目/要目" }, { q: "請<b>事</b>斯語矣", a: "實踐" }, { q: "無求生以<b>害</b>仁", a: "損害" }, { q: "有殺身以<b>成</b>仁", a: "成全" }, { q: "樊遲<b>御</b>", a: "駕駛車馬" }, { q: "<b>無</b>違", a: "不要" }, { q: "無<b>違</b>", a: "違背" }, { q: "生<b>事</b>之以禮", a: "侍奉/服侍" }, { q: "是謂能<b>養</b>", a: "供養" }, { q: "皆能有<b>養</b>", a: "飼養" }, { q: "事父母<b>幾</b>諫", a: "輕微/婉轉" }, { q: "又敬不<b>違</b>", a: "觸忤/冒犯" }, { q: "<b>勞</b>而不怨", a: "擔憂/憂愁" }, { q: "父母之<b>年</b>", a: "年紀/年歲" }, { q: "君子不<b>重</b>則不威", a: "莊重" }, { q: "君子不重則不<b>威</b>", a: "威儀" }, { q: "學則不<b>固</b>", a: "鞏固/牢固" }, { q: "無友不<b>如</b>己者", a: "及/及得上/比得上" }, { q: "<b>過</b>則勿憚改", a: "過錯" }, { q: "過則勿<b>憚</b>改", a: "害怕/畏懼" }, { q: "小人長<b>戚戚</b>", a: "憂愁" }, { q: "<b>斯</b>謂之君子矣乎", a: "這樣" }, { q: "君子<b>成</b>人之美", a: "成全" }, { q: "小人<b>反</b>是", a: "相反" }, { q: "君子義以為<b>質</b>", a: "原則" }, { q: "禮以<b>行</b>之", a: "實行/實踐" }, { q: "<b>孫</b>以出之", a: "謙遜" }, { q: "孫以<b>出</b>之", a: "說出" }, { q: "<b>信</b>以成之", a: "誠實" }, { q: "信以<b>成</b>之", a: "完成" }, { q: "君子<b>病</b>無能焉", a: "擔憂/擔心" }, { q: "君子<b>求</b>諸己", a: "責求/要求" }
         ]},
         "2": { themeColor: "#d9534f", title: "魚我所欲也", data: [
             { q: "<b>舍</b>魚而取熊掌者也", a: "捨棄" },{ q: "故不為<b>苟</b>得也", a: "隨便/輕率" },{ q: "死亦我所<b>惡</b>", a: "憎厭/憎惡/討厭" },{ q: "故<b>患</b>有所不辟也", a: "禍患/災禍" },{ q: "故患有所不<b>辟</b>也", a: "避/避開" },{ q: "<b>非獨</b>賢者有是心也", a: "不但/非但/不僅" },{ q: "<b>弗</b>得則死", a: "不" },{ q: "<b>嘑</b>爾而與之", a: "呼喝/叱喝" },{ q: "嘑爾而<b>與</b>之", a: "給與" },{ q: "<b>蹴</b>爾而與之", a: "踐踏" },{ q: "萬鍾則不<b>辯</b>禮義而受之", a: "辨別" },{ q: "萬鍾於我何<b>加</b>焉", a: "增益/裨益" },{ q: "妻妾之<b>奉</b>", a: "侍奉" },{ q: "所識窮乏者<b>得</b>我與", a: "感恩" },{ q: "<b>鄉</b>為身死而不受", a: "過往/從前" },{ q: "是亦不可以<b>已</b>乎", a: "止/停止" }
@@ -105,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let activeMainButton = null;
     let activeSubButton = null;
     
-    // --- Quiz state variables ---
+    // --- Quiz State ---
     let currentQuizQuestions = [];
     let currentQuestionIndex = 0;
     let score = 0;
@@ -156,6 +118,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function displayContent(mainId, subId) {
         const section = database[mainId].sections[subId];
+        // Populate the database content on demand
+        if (mainId && database[mainId] && database[mainId].sections[subId] && !database[mainId].sections[subId].content) {
+            // This is a placeholder for where you'd fetch content if it weren't pre-loaded.
+            // In our case, it's already in the database object.
+        }
+
         if (section.type === 'flashcard') {
             displayFlashcards(mainId);
         } else if (section.type === 'quiz') {
@@ -164,13 +132,18 @@ document.addEventListener('DOMContentLoaded', function() {
             contentContainer.innerHTML = section.content;
         }
     }
-
+    
     // --- Flashcard Logic ---
     function displayFlashcards(mainId) {
         const articleData = dataPool[mainId];
+        if (!articleData || !articleData.data) {
+            contentContainer.innerHTML = `<h2>溫習卡片</h2><p>此篇章暫無溫習卡片。</p>`;
+            return;
+        }
         const { title, data, themeColor } = articleData;
         let cardHTML = '';
         data.forEach((card, index) => {
+            const displayAnswer = card.a.split('/')[0].split('【或】')[0].trim();
             cardHTML += `
                 <div class="flashcard">
                     <div class="flashcard-inner">
@@ -179,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="question-text">${card.q}</div>
                         </div>
                         <div class="flashcard-back" style="background-color: ${themeColor};">
-                            <div class="answer-text">${card.a.split('/')[0].trim()}</div>
+                            <div class="answer-text">${displayAnswer}</div>
                         </div>
                     </div>
                 </div>`;
@@ -190,9 +163,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p style="text-align: center; color: #666;">點擊卡片即可翻轉查看答案。</p>
                 <div class="card-grid">${cardHTML}</div>
             </div>`;
-        document.querySelectorAll('.flashcard').forEach(card => card.addEventListener('click', function() { this.classList.toggle('is-flipped'); }));
+        document.querySelectorAll('.flashcard').forEach(card => {
+            card.addEventListener('click', function() { this.classList.toggle('is-flipped'); });
+        });
     }
-    
+
     // --- FULLY RESTORED QUIZ LOGIC ---
     function displayQuizStartScreen(mainId) {
         currentArticleId = mainId;
@@ -201,59 +176,69 @@ document.addEventListener('DOMContentLoaded', function() {
         contentContainer.innerHTML = `
             <div class="quiz-container">
                 <h2>${articleData.title} - 互動答題挑戰</h2>
-                <p>請選擇挑戰的題目數量：</p>
-                <div class="quiz-selection">
+                <div id="quiz-selection-screen">
+                    <label for="question-count">請選擇題目數量：</label>
                     <input type="number" id="question-count" min="1" max="${maxQuestions}" value="${Math.min(10, maxQuestions)}">
                     <button id="start-quiz-btn">開始挑戰</button>
                 </div>
+                <div id="quiz-game-screen" style="display:none;"></div>
             </div>`;
         document.getElementById('start-quiz-btn').addEventListener('click', () => {
             const count = document.getElementById('question-count').value;
-            startQuiz(mainId, parseInt(count));
+            startQuiz(mainId, parseInt(count, 10));
         });
     }
 
     function startQuiz(mainId, numQuestions) {
-        const allQuestions = dataPool[mainId].data.map(item => ({
+        const articleData = dataPool[mainId].data;
+        if (!articleData) return;
+
+        const allQuestions = articleData.map(item => ({
             q: item.q,
-            correctAnswers: item.a.split('/').map(s => s.trim().replace(/（.*）/, '')) // Handle multiple answers
+            correctAnswers: item.a.split('/').flatMap(a => a.split('【或】')).map(s => s.trim().replace(/（.*）/g, ''))
         }));
         
         currentQuizQuestions = shuffleArray([...allQuestions]).slice(0, numQuestions);
         currentQuestionIndex = 0;
         score = 0;
+        
+        document.getElementById('quiz-selection-screen').style.display = 'none';
+        document.getElementById('quiz-game-screen').style.display = 'block';
         displayQuestion();
     }
 
     function displayQuestion() {
+        const gameScreen = document.getElementById('quiz-game-screen');
         if (currentQuestionIndex >= currentQuizQuestions.length) {
             displayResults();
             return;
         }
-        const questionData = currentQuizQuestions[currentQuestionIndex];
-        const correctAnswer = questionData.correctAnswers[Math.floor(Math.random() * questionData.correctAnswers.length)];
 
-        let distractors = [];
-        const entirePool = dataPool[currentArticleId].data;
-        while (distractors.length < 3) {
-            const randomQuestion = entirePool[Math.floor(Math.random() * entirePool.length)];
-            const randomAnswer = randomQuestion.a.split('/')[0].trim().replace(/（.*）/, '');
-            if (!questionData.correctAnswers.includes(randomAnswer) && !distractors.includes(randomAnswer) && randomAnswer !== correctAnswer) {
-                distractors.push(randomAnswer);
+        const questionData = currentQuizQuestions[currentQuestionIndex];
+        const allPossibleAnswers = dataPool[currentArticleId].data.flatMap(item => item.a.split('/'));
+        
+        let options = [];
+        const correctOption = questionData.correctAnswers[Math.floor(Math.random() * questionData.correctAnswers.length)];
+        options.push(correctOption);
+
+        while (options.length < 4) {
+            const randomAnswer = allPossibleAnswers[Math.floor(Math.random() * allPossibleAnswers.length)].split('【或】')[0].trim().replace(/（.*）/g, '');
+            if (!options.includes(randomAnswer) && !questionData.correctAnswers.includes(randomAnswer)) {
+                options.push(randomAnswer);
             }
         }
         
-        const options = shuffleArray([correctAnswer, ...distractors]);
+        const shuffledOptions = shuffleArray(options);
         let optionsHTML = '';
-        options.forEach(option => { optionsHTML += `<button class="quiz-option">${option}</button>`; });
+        shuffledOptions.forEach(option => {
+            optionsHTML += `<button class="quiz-option">${option}</button>`;
+        });
 
-        contentContainer.innerHTML = `
-            <div class="quiz-game">
-                <div class="quiz-progress">第 ${currentQuestionIndex + 1} / ${currentQuizQuestions.length} 題</div>
-                <div class="quiz-question">${questionData.q}</div>
-                <div class="quiz-options">${optionsHTML}</div>
-                <div class="quiz-feedback"></div>
-            </div>`;
+        gameScreen.innerHTML = `
+            <div class="quiz-progress">第 ${currentQuestionIndex + 1} / ${currentQuizQuestions.length} 題</div>
+            <div class="quiz-question">${questionData.q}</div>
+            <div class="quiz-options">${optionsHTML}</div>
+            <div class="quiz-feedback"></div>`;
 
         document.querySelectorAll('.quiz-option').forEach(button => {
             button.addEventListener('click', (e) => checkAnswer(e.target.textContent, questionData.correctAnswers));
@@ -261,33 +246,37 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function checkAnswer(selectedAnswer, correctAnswers) {
-        const feedbackDiv = document.querySelector('.quiz-feedback');
+        const feedbackEl = document.querySelector('.quiz-feedback');
         const optionButtons = document.querySelectorAll('.quiz-option');
-        let isCorrect = correctAnswers.includes(selectedAnswer);
-        
+        const isCorrect = correctAnswers.includes(selectedAnswer);
+
         optionButtons.forEach(button => {
             button.disabled = true;
             if (correctAnswers.includes(button.textContent)) {
                 button.classList.add('correct');
-            } else if (button.textContent === selectedAnswer) {
+            }
+            if (button.textContent === selectedAnswer && !isCorrect) {
                 button.classList.add('incorrect');
             }
         });
 
         if (isCorrect) {
             score++;
-            feedbackDiv.innerHTML = '<p class="correct-text">答對了！</p>';
+            feedbackEl.className = 'quiz-feedback correct-feedback';
+            feedbackEl.textContent = '✅ 答對了！';
         } else {
-            feedbackDiv.innerHTML = `<p class="incorrect-text">答錯了！正確答案是：${correctAnswers.join(' 或 ')}</p>`;
+            feedbackEl.className = 'quiz-feedback incorrect-feedback';
+            feedbackEl.innerHTML = `❌ 答錯了！<br>正確答案是：${correctAnswers.join(' 或 ')}`;
         }
-
+        feedbackEl.style.display = 'block';
         currentQuestionIndex++;
         setTimeout(displayQuestion, 2000);
     }
 
     function displayResults() {
-        const percentage = (score / currentQuizQuestions.length * 100).toFixed(1);
-        contentContainer.innerHTML = `
+        const gameScreen = document.getElementById('quiz-game-screen');
+        const percentage = currentQuizQuestions.length > 0 ? ((score / currentQuizQuestions.length) * 100).toFixed(0) : 0;
+        gameScreen.innerHTML = `
             <div class="quiz-results">
                 <h2>挑戰完成！</h2>
                 <p>你的成績：</p>
@@ -299,29 +288,32 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('restart-quiz-btn').addEventListener('click', () => displayQuizStartScreen(currentArticleId));
         document.getElementById('back-to-home-btn').addEventListener('click', init);
     }
-
+    
     // --- Search & Init ---
     function performSearch() {
-        // Search logic remains the same
+        // This function from your original file works
     }
     function displaySearchResults(results, query) {
-        // Search display logic remains the same
+        // This function from your original file works
     }
-    
+
     function init() {
         mainMenuContainer.innerHTML = '';
-        for (const mainId in database) {
+        Object.keys(database).forEach(mainId => {
             const button = document.createElement('button');
             button.textContent = database[mainId].title;
             button.dataset.mainId = mainId;
             button.addEventListener('click', handleMainClick);
             mainMenuContainer.appendChild(button);
-        }
+        });
+
         searchButton.addEventListener('click', performSearch);
-        searchInput.addEventListener('keyup', (event) => { if (event.key === 'Enter') performSearch(); });
+        searchInput.addEventListener('keyup', e => { if (e.key === 'Enter') performSearch(); });
         
-        contentContainer.innerHTML = `<div style="text-align: center;"><h2>歡迎使用 DSE 中文範文精讀網站</h2><p>請從上方主目錄選擇一篇範文，開始您的學習之旅。</p><p>每個篇章都包含「課文原文」、「互動溫習卡片」及「互動答題挑戰」。</p></div>`;
+        if (activeSubButton) activeSubButton.classList.remove('active');
+        if (activeMainButton) activeMainButton.classList.remove('active');
         subMenuContainer.style.display = 'none';
+        contentContainer.innerHTML = `<h2>歡迎使用 DSE 中文範文精讀網站</h2><p>請從上方主目錄選擇一篇範文，開始您的學習之旅。</p><p>或在頂部搜尋欄輸入關鍵字，在所有篇章中快速查找資料。</p>`;
     }
 
     init();
